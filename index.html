@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="wrap">
+        <h1>Conway's Game of Life</h1>
+        
+        <canvas class="grid" id="grid"></canvas>
+        
+        <div id="controls" class="controls">Controls
+          <div id="desc">
+            <ul class="instructions">
+              <li>Click buttons or use keyboard</li>
+              <li>Click individual cells on/off</li>
+              <li>Colors indicate life cycle</li>
+            </ul>
+          </div>
+          
+          <div id="readout">
+            <p>Elapsed:          <span id="clock">00:00:00</span></p>
+            <p>                  <span id="evolving">Not yet</span></p>
+            <p>Live Cells:       <span id="liveCellCount">0</span></p>
+            <p>Max Population #: <span id="maxPopulation">0</span></p>
+            <p>Oldest Cell:      <span id="oldestCell">0</span></p>
+          </div>
+          
+          <ul id="btns">
+            <li>
+              <button class="btn" id="toggle">Play (space)</button>
+              <button class="btn" id="reset">Reset (r)</button>
+            </li>
+            <li>
+              <button class="btn" id="center" title="Press the letter o to center the cells">Center (o)</button>
+              <button  class="lineBtn vertical" title="Seed a line of cells through the vertical center">V Line (v)</button>
+              <button  class="lineBtn" title="Seed a line of cells through the horizontal center">H Line (h)</button>
+            </li>
+            <li>
+              <button class="btn" id="clear">Clear (c)</button>
+              <button class="btn" id="random">Random Seed (s)</button>
+              <button class="btn" id="save">Save</button>
+            </li>
+            <li>
+              PreSeed:
+              <select id="preSeed">
+                <option selected="selected" value="gosper">Gosper's Glider Gun</option>
+                <option value="sword">Sword</option>
+                <option value="rorschach">Rorschach</option>
+                <option value="fpentomino">F Pentomino</option>
+                <option value="diehard">Diehard</option>
+                <option value="pulsar">Pulsar</option>
+                <option value="poppycock">Poppycock</option>
+              </select>
+            </li>
+            <li>
+              Render Style:
+              <select id="renderStyle">
+                <option selected="selected" value="block">Blocky</option>
+                <option value="moogily">Googily Moogily</option>
+                <option value="fadeIn">Ghosty</option>
+              </select>
+            </li>
+          </ul>
+        
+          <form id="update" action="" method="">
+            <label>
+              FPS: 
+              <input type="text" id="fps" value="10" />
+            </label>
+            <label>
+              Width: 
+              <input type="text" id="w" value="100" />
+            </label>
+            <label>
+              Height: 
+              <input type="text" id="h" value="100" />
+            </label>
+            <label>
+              Unit: 
+              <input type="text" id="unit" value="10" />
+            </label>
+            <label>
+              Max Seed Clumps: 
+              <input type="text" id="maxClumps" value="30" />
+            </label>
+            <label>
+              Max Clump Size: 
+              <input type="text" id="clumpSize" value="40" />
+            </label>
+            <input type="submit" value="Update" />
+          </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript" src="js/cell.js"></script>
+    <script type="text/javascript" src="js/renderer.js"></script>
+    <script type="text/javascript" src="js/io.js"></script>
+    <script type="text/javascript" src="js/automaton.js"></script>
+    <script type="text/javascript" src="js/anim.js"></script>
+    <script type="text/javascript">
+      // Initialization
+      new Anim('grid').bindEvents();
+    </script>
+  </body>
+</html>
