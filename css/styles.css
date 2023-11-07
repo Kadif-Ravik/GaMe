@@ -83,11 +83,12 @@ h1 {
 #btns li {
   align-items: center;
   padding: 5px;
-  margin: 0 0 0 0;
+  margin: 10px 0 0 0;
 }
 
 .instructions li {
   color: black;
+  margin: 5px 0 0 0;
 }
 
 .cell {

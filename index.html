@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
   </head>
   <body>
-    <div id="wrap">
+    <div name="wrap" id="wrap">
         <h1>Conway's Game of Life</h1>
         
-        <canvas class="grid" id="grid"></canvas>
+        <canvas class="grid" name="grid" id="grid"></canvas>
         
-        <div id="controls" class="controls">Instructions
-          <div id="desc">
+        <div name="controls" id="controls" class="controls">Instructions
+          <div name="desc" id="desc">
             <ul class="instructions">
               <li>Press 'o' key  to center image</li>
               <li>Apply grid settings</li>
@@ -22,32 +22,32 @@
             </ul>
           </div>
           
-          <div id="readout">
-            <p>Elapsed:          <span id="clock">00:00:00</span></p>
-            <p>                  <span id="evolving">Not yet</span></p>
-            <p>Live Cells:       <span id="liveCellCount">0</span></p>
-            <p>Max Population #: <span id="maxPopulation">0</span></p>
-            <p>Oldest Cell:      <span id="oldestCell">0</span></p>
+          <div name="readout" id="readout">
+            <p>Elapsed:          <span name="clock" id="clock">00:00:00</span></p>
+            <p>                  <span name="evolving" id="evolving">Not yet</span></p>
+            <p>Live Cells:       <span name="liveCellCount" id="liveCellCount">0</span></p>
+            <p>Max Population #: <span name="maxPopulation" id="maxPopulation">0</span></p>
+            <p>Oldest Cell:      <span name="oldestCell" id="oldestCell">0</span></p>
           </div>
           
-          <ul id="btns">
+          <ul name="btns" id="btns">
             <li>
-              <button class="btn" id="toggle">Play (space)</button>
-              <button class="btn" id="reset">Reset (r)</button>
+              <button class="btn" name="toggle" id="toggle">Play (space)</button>
+              <button class="btn" name="reset" id="reset">Reset (r)</button>
             </li>
             <li>
-              <button class="btn" id="center" title="Press the letter o to center the cells">Center (o)</button>
-              <button  class="lineBtn vertical" title="Seed a line of cells through the vertical center">V Line (v)</button>
+              <button class="btn" name="center" id="center" title="Press the letter o to center the cells">Center (o)</button>
+              <button  class="lineBtn vertical" name="" title="Seed a line of cells through the vertical center">V Line (v)</button>
               <button  class="lineBtn" title="Seed a line of cells through the horizontal center">H Line (h)</button>
             </li>
             <li>
-              <button class="btn" id="clear">Clear (c)</button>
-              <button class="btn" id="random">Random Seed (s)</button>
-              <button class="btn" id="save">Save</button>
+              <button class="btn" name="clear" id="clear">Clear (c)</button>
+              <button class="btn" name="random" id="random">Random Seed (s)</button>
+              <button class="btn" name="save" id="save">Save</button>
             </li>
             <li>
               PreSeed:
-              <select id="preSeed">
+              <select name="preSeed" id="preSeed">
                 <option selected="selected" value="gosper">Gosper's Glider Gun</option>
                 <option value="sword">Sword</option>
                 <option value="rorschach">Rorschach</option>
@@ -96,6 +96,17 @@
           </form>
         </div>
     </div>
+
+    <footer name="footer" class="links">Resources
+      <section>Games
+        <a href="https://conwaylife.com/">conwaylife.com</a>
+        <a href="https://playgameoflife.com/">playgameoflife.com</a>
+      </section>
+      <section>Wikis
+        <a href="https://conwaylife.com/wiki/Main_Page">Conway Life Wiki</a>
+        <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#">wikipedia</a>
+      </section>
+    </footer>
     
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/utils.js"></script>
@@ -105,8 +116,8 @@
     <script type="text/javascript" src="js/io.js"></script>
     <script type="text/javascript" src="js/automaton.js"></script>
     <script type="text/javascript" src="js/anim.js"></script>
+    <!-- Start -->
     <script type="text/javascript">
-      // Initialization
       new Anim('grid').bindEvents();
     </script>
   </body>
